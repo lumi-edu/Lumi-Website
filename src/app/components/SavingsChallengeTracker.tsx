@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { CheckCircle2 } from "lucide-react";
 
 type Difficulty = "lite" | "standard" | "boost";
 
@@ -173,17 +174,17 @@ export default function SavingsChallengeTracker() {
   }
 
   return (
-    <section className="relative rounded-3xl border border-[#464A39]/20 bg-white p-6 md:p-8">
+    <section className="relative rounded-2xl border border-[#354024]/20 bg-white p-6 md:p-8 shadow-sm">
       {toast ? (
-        <div className="pointer-events-none absolute left-1/2 top-4 z-10 w-[92%] max-w-xl -translate-x-1/2 rounded-2xl border border-[#1BB3D1] bg-[#1BB3D1]/10 px-4 py-3 text-sm text-[#464A39] shadow-sm">
+        <div className="pointer-events-none absolute left-1/2 top-4 z-10 w-[92%] max-w-xl -translate-x-1/2 rounded-xl border-2 border-[color:var(--lumi-leaf)] bg-[color:var(--lumi-leaf)]/20 px-4 py-3 text-[color:var(--lumi-foreground)] shadow-md">
           {toast}
         </div>
       ) : null}
 
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <h2 className="text-lg font-semibold tracking-tight text-[#464A39]">Your challenge dashboard</h2>
-          <p className="mt-1 text-sm text-[#464A39] opacity-70">
+          <h2 className="text-3xl text-[color:var(--lumi-forest)] mb-3" style={{ letterSpacing: '-0.1px' }}>Your Challenge Dashboard</h2>
+          <p className="text-lg text-[color:var(--lumi-foreground)] opacity-70">
             Tap a day to mark it complete. You can change difficulty anytime.
           </p>
         </div>
@@ -202,28 +203,28 @@ export default function SavingsChallengeTracker() {
           value={`${streak}`}
           sub={activeToday ? "Active today" : "Complete consecutive days to grow it"}
         />
-        <div className="rounded-3xl border border-[#464A39]/20 bg-[#C2CBB2]/20 p-5">
-          <p className="text-sm font-semibold tracking-tight text-[#464A39]">Quick tip</p>
-          <p className="mt-2 text-sm text-[#464A39] opacity-80">
+        <div className="rounded-xl border border-[#354024]/20 bg-[color:var(--lumi-sand)]/30 p-5">
+          <p className="text-lg font-semibold text-[color:var(--lumi-forest)]">Quick Tip</p>
+          <p className="mt-2 text-base text-[color:var(--lumi-foreground)] opacity-80">
             If you miss a day, do not restart. Just continue. Consistency over perfection.
           </p>
         </div>
       </div>
 
-      <div className="mt-6 rounded-3xl border border-[#464A39]/20 bg-white p-5">
+        <div className="mt-6 rounded-xl border border-[#354024]/20 bg-white p-5">
         <div className="flex items-center justify-between gap-4">
-          <p className="text-sm font-medium text-[#464A39]">Progress</p>
-          <p className="text-sm font-semibold text-[#464A39]">{percentComplete}%</p>
+          <p className="text-base font-semibold text-[color:var(--lumi-forest)]">Progress</p>
+          <p className="text-lg font-semibold text-[color:var(--lumi-forest)]">{percentComplete}%</p>
         </div>
-        <div className="mt-3 h-3 w-full rounded-full bg-[#f1f0e2]">
+        <div className="mt-3 h-4 w-full rounded-full bg-[color:var(--lumi-pale)]">
           <div
-            className="h-3 rounded-full bg-[#464A39] transition-all"
+            className="h-4 rounded-full bg-[color:var(--lumi-forest)] transition-all"
             style={{ width: `${percentComplete}%` }}
             aria-label="Progress bar"
           />
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[#464A39]">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-[color:var(--lumi-foreground)]">
           <div className="flex gap-2">
             <Badge text="7 days" active={completedCount >= 7} />
             <Badge text="15 days" active={completedCount >= 15} />
@@ -234,7 +235,7 @@ export default function SavingsChallengeTracker() {
           <button
             type="button"
             onClick={resetAll}
-            className="rounded-full border border-[#464A39]/20 bg-white px-3 py-2 font-medium text-[#464A39] hover:bg-[#f1f0e2]"
+            className="rounded-full border-2 border-[#354024]/20 bg-white px-4 py-2 text-base font-semibold text-[color:var(--lumi-forest)] hover:bg-[color:var(--lumi-pale)] transition-colors"
           >
             Reset
           </button>
@@ -242,8 +243,8 @@ export default function SavingsChallengeTracker() {
       </div>
 
       <div className="mt-6">
-        <h3 className="text-sm font-semibold tracking-tight text-[#464A39]">Daily challenges</h3>
-        <p className="mt-1 text-sm text-[#464A39] opacity-70">
+        <h3 className="text-2xl font-semibold text-[color:var(--lumi-forest)] mb-3" style={{ letterSpacing: '-0.1px' }}>Daily Challenges</h3>
+        <p className="text-lg text-[color:var(--lumi-foreground)] opacity-70">
           Keep it simple. Completing the action matters more than the amount.
         </p>
 
@@ -256,37 +257,37 @@ export default function SavingsChallengeTracker() {
                 key={c.day}
                 type="button"
                 onClick={() => toggleDay(c.day)}
-                className={`text-left rounded-3xl border p-5 transition ${
+                className={`text-left rounded-xl border-2 p-5 transition ${
                   done
-                    ? "border-[#464A39] bg-[#464A39] text-white"
-                    : "border-[#464A39]/20 bg-white hover:bg-[#f1f0e2]"
+                    ? "border-[color:var(--lumi-leaf)] bg-[color:var(--lumi-leaf)] text-white shadow-md"
+                    : "border-[#354024]/20 bg-white hover:bg-[color:var(--lumi-pale)] hover:border-[color:var(--lumi-leaf)]"
                 }`}
                 aria-pressed={done}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className={`text-xs font-semibold uppercase tracking-wide ${done ? "text-white/80" : "text-[#464A39] opacity-60"}`}>
+                    <p className={`text-xs font-semibold uppercase tracking-wide ${done ? "text-white/80" : "text-[color:var(--lumi-forest)] opacity-70"}`}>
                       Day {c.day}
                     </p>
-                    <p className={`mt-1 text-sm font-semibold ${done ? "text-white" : "text-[#464A39]"}`}>
+                    <p className={`mt-1 text-base font-semibold ${done ? "text-white" : "text-[color:var(--lumi-foreground)]"}`}>
                       {c.title}
                     </p>
                   </div>
                   <div
-                    className={`mt-1 h-6 w-6 rounded-full border flex items-center justify-center text-xs font-bold ${
-                      done ? "border-white/30 bg-white/15 text-white" : "border-[#464A39]/30 text-[#464A39]"
+                    className={`mt-1 flex items-center justify-center ${
+                      done ? "text-white" : "text-[color:var(--lumi-leaf)]"
                     }`}
                     aria-hidden="true"
                   >
-                    {done ? "✓" : ""}
+                    {done ? <CheckCircle2 className="w-6 h-6" /> : <div className="w-6 h-6 rounded-full border-2 border-[#354024]/30" />}
                   </div>
                 </div>
 
-                <p className={`mt-3 text-sm ${done ? "text-white/90" : "text-[#464A39] opacity-80"}`}>
+                <p className={`mt-3 text-sm ${done ? "text-white/90" : "text-[color:var(--lumi-foreground)] opacity-80"}`}>
                   {text}
                 </p>
 
-                <p className={`mt-3 text-xs ${done ? "text-white/70" : "text-[#464A39] opacity-50"}`}>
+                <p className={`mt-3 text-xs ${done ? "text-white/70" : "text-[color:var(--lumi-foreground)] opacity-60"}`}>
                   Tap to {done ? "undo" : "mark complete"}
                 </p>
               </button>
@@ -295,9 +296,9 @@ export default function SavingsChallengeTracker() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl border border-[#464A39]/20 bg-[#C2CBB2]/20 p-6">
-        <h3 className="text-base font-semibold tracking-tight text-[#464A39]">Make it yours</h3>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-[#464A39] opacity-80">
+      <div className="mt-8 rounded-xl border border-[#354024]/20 bg-[color:var(--lumi-sand)]/30 p-6">
+        <h3 className="text-xl font-semibold text-[color:var(--lumi-forest)] mb-3" style={{ letterSpacing: '-0.1px' }}>Make It Yours</h3>
+        <ul className="list-disc space-y-2 pl-5 text-base text-[color:var(--lumi-foreground)] opacity-80">
           <li>Pick Lite if you want to build the habit with minimal pressure.</li>
           <li>Pick Boost if you want bigger savings actions and faster progress.</li>
           <li>If you use savings for something important, keep going. That is real life.</li>
@@ -316,14 +317,14 @@ function DifficultyPill({
   active: boolean;
   onClick: () => void;
 }) {
-  return (
+    return (
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full px-4 py-2 text-sm font-medium ring-1 transition ${
+      className={`rounded-full px-5 py-2 text-base font-semibold transition ${
         active
-          ? "bg-[#464A39] text-white ring-[#464A39]"
-          : "bg-white text-[#464A39] ring-[#464A39]/20 hover:bg-[#f1f0e2]"
+          ? "bg-[color:var(--lumi-forest)] text-[color:var(--lumi-highlight)] shadow-md"
+          : "bg-white text-[color:var(--lumi-forest)] border-2 border-[color:var(--lumi-forest)]/20 hover:bg-[color:var(--lumi-pale)] hover:border-[color:var(--lumi-leaf)]"
       }`}
     >
       {label}
@@ -333,10 +334,10 @@ function DifficultyPill({
 
 function StatCard({ title, value, sub }: { title: string; value: string; sub: string }) {
   return (
-    <div className="rounded-3xl border border-[#464A39]/20 bg-white p-5">
-      <p className="text-xs font-semibold uppercase tracking-wide text-[#464A39] opacity-70">{title}</p>
-      <p className="mt-2 text-2xl font-semibold tracking-tight text-[#464A39]">{value}</p>
-      <p className="mt-1 text-sm text-[#464A39] opacity-70">{sub}</p>
+    <div className="rounded-xl border border-[#354024]/20 bg-white p-5">
+      <p className="text-sm font-semibold uppercase tracking-wide text-[color:var(--lumi-forest)] opacity-70">{title}</p>
+      <p className="mt-2 text-3xl font-semibold text-[color:var(--lumi-forest)]" style={{ letterSpacing: '-0.89px' }}>{value}</p>
+      <p className="mt-1 text-base text-[color:var(--lumi-foreground)] opacity-70">{sub}</p>
     </div>
   );
 }
@@ -344,8 +345,8 @@ function StatCard({ title, value, sub }: { title: string; value: string; sub: st
 function Badge({ text, active }: { text: string; active: boolean }) {
   return (
     <span
-      className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 ${
-        active ? "bg-[#464A39] text-white ring-[#464A39]" : "bg-white text-[#464A39] ring-[#464A39]/20"
+      className={`rounded-full px-3 py-1 text-sm font-semibold ${
+        active ? "bg-[color:var(--lumi-leaf)] text-white" : "bg-white text-[color:var(--lumi-forest)] border border-[color:var(--lumi-forest)]/20"
       }`}
     >
       {text}
