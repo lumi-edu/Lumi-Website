@@ -16,6 +16,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       // Alias react-router to our custom implementation
       'react-router': path.resolve(__dirname, './src/react-router.ts'),
+      // Map figma asset imports to local static assets
+      'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png': path.resolve(__dirname, './src/app/assets/lumilogo.png'),
+      'figma:asset/53923c95d7ada26d1c087283760beb15c309363e.png': path.resolve(__dirname, './src/app/assets/lumihomepage.png'),
     },
   },
 })

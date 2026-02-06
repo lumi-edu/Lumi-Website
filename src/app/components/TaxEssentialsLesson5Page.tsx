@@ -2,7 +2,7 @@ import { Link } from './RouterLink';
 import { ArrowLeft, FileText, DollarSign, TrendingUp, TrendingDown, Calendar, CheckCircle, XCircle, AlertCircle, Shield } from 'lucide-react';
 import { useState } from 'react';
 import Footer from './Footer';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from '../assets/lumilogo.png';
 
 export default function TaxEssentialsLesson5Page() {
   const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: string }>({});

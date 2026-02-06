@@ -2,7 +2,7 @@ import { Link } from './RouterLink';
 import { ArrowLeft, ArrowRight, Calculator, DollarSign, Repeat, Target, Sliders, CheckCircle, AlertTriangle, TrendingUp, PieChart, Shield } from 'lucide-react';
 import { useState } from 'react';
 import Footer from './Footer';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from '../assets/lumilogo.png';
 
 export default function FinancialPlanningLesson4Page() {
   const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: string }>({});

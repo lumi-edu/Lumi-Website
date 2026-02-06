@@ -1,5 +1,5 @@
 import { Link } from './RouterLink';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from "../assets/lumilogo.png";
 import { Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {

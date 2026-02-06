@@ -2,7 +2,7 @@ import { Link } from './RouterLink';
 import { ArrowLeft, DollarSign, TrendingUp, TrendingDown, Home, Car, GraduationCap, CreditCard, ShoppingBag, Smartphone, AlertCircle, CheckCircle2, XCircle, Scale, Clock, BarChart3, Calendar, Zap, Shield, AlertTriangle } from 'lucide-react';
 import { useState } from 'react';
 import Footer from './Footer';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from '../assets/lumilogo.png';
 
 export default function CreditDebtLesson10Page() {
   const [selectedAnswers, setSelectedAnswers] = useState<{[key: number]: string}>({});

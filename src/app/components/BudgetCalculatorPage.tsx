@@ -1,7 +1,7 @@
 import { Link } from './RouterLink';
 import Footer from './Footer';
 import BudgetCalculator503020 from './BudgetCalculator503020';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from '../assets/lumilogo.png';
 
 export default function BudgetCalculatorPage() {
   // Note: We removed useLocation since we're not using React Router

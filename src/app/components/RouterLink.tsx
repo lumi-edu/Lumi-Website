@@ -1,28 +1,25 @@
 import React from 'react';
 
-interface RouterLinkProps {
+interface RouterLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;
-  className?: string;
-  children: React.ReactNode;
   state?: any;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-export function Link({ to, className, children, state, onClick }: RouterLinkProps) {
+export function Link({ to, children, state, ...rest }: RouterLinkProps) {
+  const { onClick, className } = rest as React.AnchorHTMLAttributes<HTMLAnchorElement>;
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    
     // Call custom onClick if provided
     if (onClick) {
       onClick(e);
     }
-    
+
     window.history.pushState(state || {}, '', to);
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
   return (
-    <a href={to} onClick={handleClick} className={className}>
+    <a href={to} onClick={handleClick} {...rest}>
       {children}
     </a>
   );

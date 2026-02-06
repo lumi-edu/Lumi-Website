@@ -1,7 +1,7 @@
 import { Link } from './RouterLink';
 import { ArrowLeft, CheckCircle2, DollarSign, Wallet, PiggyBank, Shield, Target, TrendingUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from '../assets/lumilogo.png';
 import Footer from './Footer';
 
 export default function BudgetingLesson8Page() {

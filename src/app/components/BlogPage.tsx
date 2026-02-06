@@ -1,6 +1,6 @@
 import { Link } from './RouterLink';
 import { Calendar, Clock, ArrowRight, TrendingUp } from 'lucide-react';
-import lumiLogo from 'figma:asset/6faa24b9b39bf1a060318155560616649c074cb5.png';
+import lumiLogo from "../assets/lumilogo.png";
 import Footer from './Footer';
 
 export default function BlogPage() {
@@ -12,7 +12,7 @@ export default function BlogPage() {
       date: "February 1, 2026",
       readTime: "8 min read",
       category: "Market Analysis",
-      image: "#889063",
+      image: "#889P063",
       link: "/blog/valuation-dispersion-article"
     },
     {
